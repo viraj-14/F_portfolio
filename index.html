@@ -45,7 +45,9 @@
             
 
         <nav class="navbar">
-            <div id="menu" class="fas fa-bars"></div>
+            <div id="menu" class="fas fa-bars">
+
+            </div>
             <ul>
                 <li><a href="#home" class="glow-on-hover">home</a></li>
                 <li><a href="#about" class="glow-on-hover">about</a></li>
@@ -53,7 +55,7 @@
                 <!-- <li><a href="#portfolio">portfolio</a></li> -->
                 <li><a href="#contact" class="glow-on-hover">contact</a></li>
             </ul>
-            
+        
                
                 <div class="centerdiv">
                     <!--instagram-->
@@ -256,22 +258,49 @@
 
             <div>
 
-            <form>
+            <form name="submit-to-google-sheet">
 
                 <input type="text" placeholder="name" class="box">
                 <input type="email" placeholder="email" class="box">
                 <input type="text" placeholder="project" class="box">
                 <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+                    <div class="centerdiv">
+                <!--instagram-->
+                <a href="https://www.instagram.com/virajkothavale_14/"><i class="fa-brands fa-square-instagram" style="color: rgb(236, 12, 165);"></i></a>
+                <!--whatsapp-->
+                    <a href="https://wa.me/8237030032"><i class="fa-brands fa-square-whatsapp" style="color: rgb(11, 238, 72);"></i></a>
+                    <!--telegram-->
+                    <a href="https://t.me/viraj0032"><i class="fa-brands fa-telegram" style="color: aqua;"></i></a>
+                     
+        </div>
                 <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
+             
+            </form> 
+<!--<form name="submit-to-google-sheet">
+    <input type="text" name="name" placeholder="your name" class="box">
+    <input type="email" name="email" placeholder="your email" class="box">
+    <textarea type="message" rows="6" class="box" placeholder="your message"></textarea>
+    <button type="submit" class="box-container" >submit</button>
 
-            </form>
-
+</form>-->
+ 
+           
         </div>
 
     </section>
 
     <!-- contact section ends -->
-
+    <script>
+        const scriptURL = '<https://script.google.com/macros/s/AKfycbxbkV5FcKOiMsZ4XxERHnULJpLUlDjbP_ArMaIB7AD9MAlRFbeeK6Ddre9chU6Zh9eT/exec>'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 
     <!-- scroll top button  -->
         
@@ -283,24 +312,7 @@
 
 
 
-    <!-- jquery cdn link  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/6.5.2/jquery.min.js"></script>
-
-    <!-- custom js file link  -->
-    <script src="script.js"></script>
-
-    
-      <script>
-        const scriptURL = '<https://script.google.com/macros/s/AKfycbymRW6o6fhNLzRcNMZk47zRfZpr0w9dR9VSFGpDPgDwwbjAOgZMfOk60O6r_146SEol/exec'
-        const form = document.forms['submit-to-google-sheet']
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => console.log('Success!', response))
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
+  
 </body>
 
 </html>
